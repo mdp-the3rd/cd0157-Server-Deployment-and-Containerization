@@ -3,17 +3,12 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.11
+      python: 3.9
     commands:
       - echo "Using system Docker (already running)"
       - docker --version
-      - kubectl version --client || true
       - python --version
       - pip install --upgrade pip pytest
-
-  pre_build:
-    commands:
-      - echo "Logging in to ECR (if needed)"
 
   build:
     commands:
