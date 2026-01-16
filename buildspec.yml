@@ -5,10 +5,11 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
-      - echo "Using system Docker (already running)"
-      - docker --version
+      - echo "Installing dependencies"
       - python --version
-      - pip install --upgrade pip pytest
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+      - pip install pytest
 
   build:
     commands:
